@@ -1,0 +1,653 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: "Winky Sans", sans-serif;
+}
+
+.container {
+  padding: 0 0;
+  padding-bottom: 10px;
+}
+.container1 {
+  padding: 20px 10%;
+  padding-bottom: 10px;
+}
+
+/* Header Styles */
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 40px;
+    color: black;
+    position: relative;
+    flex-direction: column;
+    z-index: 10; /* Ensure header is on top */
+}
+
+#header img {
+    max-height: 125px;
+    max-width: 140px;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#header p {
+    font-size: 19px;
+    color: coral;
+    line-height: 1.5;
+}
+
+#contact {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Top navigation bar */
+.topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    background-color: slategray;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.topnav a {
+    text-align: center;
+    padding: 15px;
+    margin: -2px;
+    text-decoration: none;
+}
+
+.topnav li {
+    display: inline-block;
+    padding: 0;
+}
+
+.topnav a:hover {
+    color: white;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 1px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.menu a:hover {
+    color: black;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rosybrown;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    margin-left: auto;
+    position: absolute;
+    top: 20px;
+    right: 25px; /* Position the hamburger on the top right */
+    z-index: 100;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+    width: 100%;
+    height: 95vh;
+}
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: coral;
+        }
+
+        .dots-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: white;
+            transition: background-color 0.6s ease;
+            position: relative;
+        }
+
+.active,
+.dot:hover {
+    background-color: silver;
+}
+
+/* General Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: lavender;
+    color: black;
+    overflow: hidden;
+}
+
+/* Table header and body */
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #36454F;
+}
+
+tr:hover {
+    background-color: cadetblue;
+}
+
+caption {
+    font-size: 18px;
+    font-weight: bold;
+    color: coral;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+
+/*---- Introduction ----*/
+#introduction {
+    color: black;
+    padding: 50px 0;
+}
+
+.intro-box {
+    background-color: #36454F;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+#services {
+    background-image: url(back.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ccc;
+    color: white;
+    padding: 40px 10%;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 20px;
+}
+
+.services-list div {
+    background-color: #262626;
+    padding: 40px;
+    border-radius: 5px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.services-list div:hover {
+    color: white;
+    background-color: coral;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    #services {
+        padding: 20px 5%;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+#contact {
+    background-color: white;
+}
+
+.container .box-container {
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	justify-content: center;
+}
+
+.container .box-container .box1 {
+	border-radius: 5px;
+	background: white; 
+	text-align: center;
+	padding: 5px;
+	margin: 50px;
+}
+
+.container .box-container .box1:hover{
+	transform: scale(1.009);
+}	
+
+mark {
+   background-color: lightgreen;
+ }	
+		
+		
+		
+/* Contact Us */
+#contact-us {
+    padding: 25px 10%;
+    background-color: white;
+}
+
+.here {
+    float:right;
+    font-size:30px;
+    color: rosybrown;
+}
+
+.contact-left {
+    flex-basis: 50%;
+}
+
+.contact-right {
+    flex-basis: 45%;
+}
+
+.contact-left p i {
+    color: black;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.contact-left p a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.social-icon {
+    margin-top: 30px;
+}
+
+.social-icon a {
+    text-decoration: none;
+    font-size: 35px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icon a:hover {
+    color: dodgerblue;
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    display: inline-block;
+	width: 20%;
+	height: 40px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form btn2 {
+    padding: 14px 16px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn.btn2.btn3 {
+    background-color: rosybrown;
+    cursor: pointer;
+}
+
+/**--------Footer---------**/
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+	background-color: black;
+    padding: 20px;
+}
+
+.footer-heading {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.footer-heading h2 {
+    margin-bottom: 2rem;
+}
+
+.footer-heading a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem; /* Adds margin below the logo */
+}
+
+.footer-logo img {
+    max-width: 150px; /* Adjust size as necessary */
+    max-height: 150px; /* Adjust height as needed */
+    object-fit: contain
+}
+
+/* Mobile Navigation */
+@media (max-width: 900px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: slategray; /* Change to match the nav color */
+        padding: 20px;
+        z-index: 99; /* Ensure the menu appears above the content */
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Show the hamburger menu */
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    #header {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #header img {
+        position: static;
+        max-height: 100px;
+        max-width: 120px;
+        margin-bottom: -40px; /* Adjust space between the logo and text */
+    }
+
+    #header p {
+        font-size: 16px;
+        margin-bottom: 10px; /* Adjust space between the heading and tagline */
+    }
+
+    #contact {
+        position: static;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    #header p {
+        font-size: 14px;
+    }
+
+    #contact {
+        font-size: 12px;
+    }
+
+    #contact i {
+        font-size: 18px;
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 500px) {
+    .prev,
+    .next,
+    .text {
+    font-size: 11px;
+            }
+.intro-box {
+    padding: 15px;
+  }
+}
+
+       
+
+/* Responsive Design for Tables */
+@media only screen and (max-width: 468px) {
+    .container1 {
+        padding: 10px;
+    }
+
+    /* Add horizontal scroll for tables */
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Stack table rows for mobile */
+    table, th, td {
+        display: block;
+    }
+
+    th, td {
+        width: 100%;
+        display: block;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        padding: 12px 10px;
+    }
+
+    /* Table header */
+    th {
+        background-color: #36454F;
+        color: white;
+    }
+
+    /* Styling the "caption" text */
+    caption {
+        font-size: 14px;
+    }
+
+    /* Stack the course list into a more readable format */
+    tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    td {
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+        display: block;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-top: 5px;
+        display: block;
+    }
+}		
+
+/**--------Responsive Design---------**/
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Stack the footer items vertically on smaller screens */
+        align-items: center; /* Center the items */
+        text-align: center; /* Center the text */
+    }
+
+    .footer-heading {
+        margin-right: 0;
+        margin-bottom: 1rem; /* Add spacing between sections */
+    }
+
+    .footer-logo img {
+        max-width: 120px; /* Adjust the logo size for smaller screens */
+        max-height: 70px; /* Adjust height as needed */
+        object-fit: contain
+    }
+
+    .footer-heading a {
+        margin-bottom: 1rem; /* Add space between links */
+    }
+
+    .footer-container {
+        padding: 0 10%; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-heading {
+        flex: 1 1 100%; /* Make each footer section take up full width */
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 1rem;
+    }
+
+    .footer-heading a {
+        font-size: 14px; /* Reduce font size on very small screens */
+    }
+}

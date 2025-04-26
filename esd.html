@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ekurhuleni Skills Development</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background-color: white;
+    font-family: "Winky Sans", sans-serif;
+}
+
+.container {
+  padding: 0 0;
+  padding-bottom: 10px;
+}
+.container1 {
+  padding: 20px 10%;
+  padding-bottom: 10px;
+}
+
+/* Header Styles */
+#header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    padding: 40px;
+    color: black;
+    position: relative;
+    flex-direction: column;
+    z-index: 10; /* Ensure header is on top */
+}
+
+#header img {
+    max-height: 125px;
+    max-width: 140px;
+    position: absolute;
+    left: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+#header p {
+    font-size: 19px;
+    color: coral;
+    line-height: 1.5;
+}
+
+#contact {
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Top navigation bar */
+.topnav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    font-size: 20px;
+    background-color: slategray;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.topnav a {
+    text-align: center;
+    padding: 15px;
+    margin: -2px;
+    text-decoration: none;
+}
+
+.topnav li {
+    display: inline-block;
+    padding: 0;
+}
+
+.topnav a:hover {
+    color: white;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+}
+
+.menu li {
+    position: relative;
+    margin: 0 1px;
+}
+
+.menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+}
+
+.menu a:hover {
+    color: black;
+}
+
+/* Dropdown Styles */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: rosybrown;
+    top: 100%;
+    left: 0;
+    min-width: 150px;
+    z-index: 100;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background-color: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Hamburger menu */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+    color: black;
+    margin-left: auto;
+    position: absolute;
+    top: 20px;
+    right: 25px; /* Position the hamburger on the top right */
+    z-index: 100;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+}
+
+.mySlides {
+    display: none;
+}
+
+img {
+    vertical-align: middle;
+    width: 100%;
+    height: 95vh;
+}
+
+        /* Next & previous buttons */
+        .prev,
+        .next {
+            cursor: pointer;
+            position: absolute;
+            top: 50%;
+            width: auto;
+            padding: 16px;
+            margin-top: -22px;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+            transition: 0.6s ease;
+            border-radius: 0 3px 3px 0;
+            user-select: none;
+        }
+
+        /* Position the "next button" to the right */
+        .next {
+            right: 0;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .prev:hover,
+        .next:hover {
+            background-color: coral;
+        }
+
+        .dots-container {
+            position: absolute;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 5px;
+        }
+
+        .dot {
+            cursor: pointer;
+            height: 15px;
+            width: 15px;
+            margin: 0 5px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: white;
+            transition: background-color 0.6s ease;
+            position: relative;
+        }
+
+.active,
+.dot:hover {
+    background-color: silver;
+}
+
+/* General Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: lavender;
+    color: black;
+    overflow: hidden;
+}
+
+/* Table header and body */
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #36454F;
+}
+
+tr:hover {
+    background-color: cadetblue;
+}
+
+caption {
+    font-size: 18px;
+    font-weight: bold;
+    color: coral;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+
+/*---- Introduction ----*/
+#introduction {
+    color: black;
+    padding: 50px 0;
+}
+
+.intro-box {
+    background-color: #36454F;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    position: relative;
+    overflow: hidden;
+}
+
+#services {
+    background-image: url(back.jpg); 
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: #ccc;
+    color: white;
+    padding: 40px 10%;
+}
+
+.services-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 20px;
+}
+
+.services-list div {
+    background-color: #262626;
+    padding: 40px;
+    border-radius: 5px;
+    transition: background 0.5s, transform 0.5s;
+}
+
+.services-list div h2 {
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.services-list div:hover {
+    color: white;
+    background-color: coral;
+    transform: translateY(-1px);
+}
+
+@media (max-width: 768px) {
+    #services {
+        padding: 20px 5%;
+    }
+
+    .services-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+#contact {
+    background-color: white;
+}
+
+.container .box-container {
+    display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	justify-content: center;
+}
+
+.container .box-container .box1 {
+	border-radius: 5px;
+	background: white; 
+	text-align: center;
+	padding: 5px;
+	margin: 50px;
+}
+
+.container .box-container .box1:hover{
+	transform: scale(1.009);
+}	
+
+mark {
+   background-color: lightgreen;
+ }	
+		
+		
+		
+/* Contact Us */
+#contact-us {
+    padding: 25px 10%;
+    background-color: white;
+}
+
+.here {
+    float:right;
+    font-size:30px;
+    color: rosybrown;
+}
+
+.contact-left {
+    flex-basis: 50%;
+}
+
+.contact-right {
+    flex-basis: 45%;
+}
+
+.contact-left p i {
+    color: black;
+    margin-right: 10px;
+    font-size: 24px;
+}
+
+.contact-left p a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 24px;
+    margin-top: 20px;
+    display: inline-block;
+}
+
+.social-icon {
+    margin-top: 30px;
+}
+
+.social-icon a {
+    text-decoration: none;
+    font-size: 35px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+
+.social-icon a:hover {
+    color: dodgerblue;
+    transform: translateY(-5px);
+}
+
+.btn.btn2 {
+    display: inline-block;
+	width: 20%;
+	height: 40px;
+}
+
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+}
+
+form btn2 {
+    padding: 14px 16px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.btn.btn2.btn3 {
+    background-color: rosybrown;
+    cursor: pointer;
+}
+
+/**--------Footer---------**/
+.footer {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: white;
+	background-color: black;
+    padding: 20px;
+}
+
+.footer-heading {
+    flex: 1;
+    margin-right: 2rem;
+}
+
+.footer-heading h2 {
+    margin-bottom: 2rem;
+}
+
+.footer-heading a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.footer-logo {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem; /* Adds margin below the logo */
+}
+
+.footer-logo img {
+    max-width: 150px; /* Adjust size as necessary */
+    max-height: 150px; /* Adjust height as needed */
+    object-fit: contain
+}
+
+/* Mobile Navigation */
+@media (max-width: 900px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: slategray; /* Change to match the nav color */
+        padding: 20px;
+        z-index: 99; /* Ensure the menu appears above the content */
+    }
+
+    .menu.active {
+        display: flex;
+    }
+
+    .menu li {
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    /* Show the hamburger menu */
+    .hamburger {
+        display: block;
+    }
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    #header {
+        padding: 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #header img {
+        position: static;
+        max-height: 100px;
+        max-width: 120px;
+        margin-bottom: -40px; /* Adjust space between the logo and text */
+    }
+
+    #header p {
+        font-size: 16px;
+        margin-bottom: 10px; /* Adjust space between the heading and tagline */
+    }
+
+    #contact {
+        position: static;
+        text-align: center;
+        margin-top: 15px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 480px) {
+    #header p {
+        font-size: 14px;
+    }
+
+    #contact {
+        font-size: 12px;
+    }
+
+    #contact i {
+        font-size: 18px;
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 500px) {
+    .prev,
+    .next,
+    .text {
+    font-size: 11px;
+            }
+.intro-box {
+    padding: 15px;
+  }
+}
+
+       
+
+/* Responsive Design for Tables */
+@media only screen and (max-width: 468px) {
+    .container1 {
+        padding: 10px;
+    }
+
+    /* Add horizontal scroll for tables */
+    table {
+        width: 100%;
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+
+    /* Stack table rows for mobile */
+    table, th, td {
+        display: block;
+    }
+
+    th, td {
+        width: 100%;
+        display: block;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+        padding: 12px 10px;
+    }
+
+    /* Table header */
+    th {
+        background-color: #36454F;
+        color: white;
+    }
+
+    /* Styling the "caption" text */
+    caption {
+        font-size: 14px;
+    }
+
+    /* Stack the course list into a more readable format */
+    tr {
+        display: block;
+        margin-bottom: 15px;
+    }
+
+    td {
+        border: none;
+        padding-left: 0;
+        padding-right: 0;
+        display: block;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    td:before {
+        content: attr(data-label);
+        font-weight: bold;
+        margin-top: 5px;
+        display: block;
+    }
+}		
+
+/**--------Responsive Design---------**/
+
+@media (max-width: 768px) {
+    .footer {
+        flex-direction: column; /* Stack the footer items vertically on smaller screens */
+        align-items: center; /* Center the items */
+        text-align: center; /* Center the text */
+    }
+
+    .footer-heading {
+        margin-right: 0;
+        margin-bottom: 1rem; /* Add spacing between sections */
+    }
+
+    .footer-logo img {
+        max-width: 120px; /* Adjust the logo size for smaller screens */
+        max-height: 70px; /* Adjust height as needed */
+        object-fit: contain
+    }
+
+    .footer-heading a {
+        margin-bottom: 1rem; /* Add space between links */
+    }
+
+    .footer-container {
+        padding: 0 10%; /* Adjust padding for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-heading {
+        flex: 1 1 100%; /* Make each footer section take up full width */
+        margin-bottom: 1rem;
+    }
+
+    .footer-logo {
+        margin-bottom: 1rem;
+    }
+
+    .footer-heading a {
+        font-size: 14px; /* Reduce font size on very small screens */
+    }
+}
+
+    </style>
+</head>
+
+<body>
+    <!--Header-->
+    <div id="header">
+        <img src="logo.jpeg" alt="Logo">
+        <h1>Ekurhuleni Skills Development</h1>
+        <p>Your Mind, <span style="color:black;">Is Thy Destiny <i class='bx bxs-graduation' style="color: black; font-size: 27px"></i></p>
+        <div id="contact"><i class='bx bxs-phone-call' style="color: dodgerblue; font-size: 25px;"></i>: (+276) 783-7612<br>
+            <i class='bx bx-envelope' style="color: tan; font-size: 25px;"></i>: esd@gmail.com</div>
+    </div>
+
+    <!--Navigation Bar-->
+    <nav>
+        <div class="topnav">
+            <ul class="menu">
+                <li><a href="file://143.160.81.140/CTX_Redirected_Data$/30989825/Documents/esd/esd.html">Home</a></li>
+                <li><a href="https://manyamat.github.io/esd-enroll/">Enroll</a></li>
+                <li class="dropdown">
+                    <a href="#">Our School</a>
+                    <div class="dropdown-content">
+					    <a href="#introduction">Courses</a>
+                        <a href="https://manyamat.github.io/esd-gallery/">Gallery</a>
+                        <a href="https://manyamat.github.io/esd-team/">Team</a>
+                    </div>
+                </li>
+                <li><a href="https://manyamat.github.io/esd-latestnews/">Latest News</a></li>
+                <li><a href="#services">About US</a></li>
+                <li><a href="#contact-us">Contact</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Slideshow -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="back5.jpg" alt="Slide 1">
+        </div>
+        <div class="mySlides fade">
+            <img src="back4.jpg" alt="Slide 2">
+        </div>
+        <div class="mySlides fade">
+            <img src="WhatsApp Image 2025-04-07 at 21.21.26.jpeg" alt="Slide 3">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">❮</a>
+        <a class="next" onclick="plusSlides(1)">❯</a>
+
+        <div class="dots-container">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+        </div>
+    </div>	
+	
+	<div id="introduction">
+        <div class="container1">
+            <h1 class="heading">Our School</h1>
+            <!-- Academic Achievement Table -->
+<table>
+    <caption>2025 Registrations are now open to all the demographics! Apply Online or Manually or Visit our Campus.</caption>
+    <tr>
+        <th>COURSES</th>
+        <th>Q TYPE</th>
+        <th>REG FEE</th>
+        <th>MONTHLY FEE</th>
+        <th>TOTAL FEE</th>
+    </tr>
+    <tr>
+        <td data-label="COURSES">END USER Computing</td>
+        <td data-label="QUALIFICATION TYPE">NQF Level 4</td>
+        <td data-label="REG FEE">R699.00</td>
+        <td data-label="MONTHLY FEE">R1670.00</td>
+        <td data-label="TOTAL FEE">R5000.00</td>
+    </tr>
+    <tr>
+        <td data-label="COURSES">WEB Developer</td>
+        <td data-label="QUALIFICATION TYPE">NQF Level 4</td>
+        <td data-label="REG FEE">R699.00</td>
+        <td data-label="MONTHLY FEE">R1670.00</td>
+        <td data-label="TOTAL FEE">R5000.00</td>
+    </tr>
+    <tr>
+        <td data-label="COURSES">C++ Programming</td>
+        <td data-label="QUALIFICATION TYPE">NQF Level 4</td>
+        <td data-label="REG FEE">R699.00</td>
+        <td data-label="MONTHLY FEE">R1670.00</td>
+        <td data-label="TOTAL FEE">R5000.00</td>
+    </tr>
+    <tr>
+        <td data-label="COURSES">Technopreneur</td>
+        <td data-label="QUALIFICATION TYPE">NQF Level 4</td>
+        <td data-label="REG FEE">R699.00</td>
+        <td data-label="MONTHLY FEE">R1670.00</td>
+        <td data-label="TOTAL FEE">R5000.00</td>
+    </tr>
+</table>
+				<br>
+				<p><i>*Courses/Fees are per trimester</i></p>
+
+            <!-- Resume Download Button -->
+            <p>*Click the following underlined links to <a href="CV.G.pdf" target="_blank" class="download">Download Application Form</a> OR <a href="https://manyamat.github.io/esd-enroll/" target="_blank" class="download">Online Application</a></p>
+			<br><br>
+			
+			<h2>QUICK FACTS</h2>
+                <p>1. Opening Hours: Monday - Friday / Time: 07:00am - 17:00pm
+				<br>
+				2. ADDRESS: 41 Elephant Street, Villa Lisa Ext 1, Boksburg 1459
+				<br>
+				3. We are located nearby Villa Lisa High School
+				<br>
+				4. Online services: 24 hours
+                </p>
+            <br>				
+			
+   <!-- Introduction Section -->
+            <div class="intro-box">
+			<h2>Important Information 🚨</h2>
+                <p>1. Registration fees must be paid in full before classes commence and All fees must be paid before final examinations.
+				<br>
+				2. Part-time classes: afternoon, evening or any day of the week and online classes are available.
+				<br>
+				3. Full payment with enrolment. This applies to all part-time classes: afternoon, evening or any day of the week.
+				<br>
+				4. Registration fees are non-refundable and must be paid in full before classes commence.
+				<br>
+				5. Fees are subject to change without prior notice.
+                </p>
+            </div>
+			<br>
+			<h2>Application Requirements</h2>
+                <p>1. ID COPY / PASSPORT
+				<br>
+				2. SCHOOL REPORT.
+				<br>
+				3. PROOF OF ADDRESS
+				<br>
+				4. Registration fee R 699.00
+				<br>
+				5. Monthly Fee R1670.00
+                </p>
+            <table>
+                <caption>BANKING DETAILS</caption>
+                <tr>
+                    <th>BANK</th>
+                    <th>ACCOUNT NAME</th>
+                    <th>ACCOUNT NUMBER</th>
+					<th>BRANCH CODE</th>
+					<th>REFERENCE</th>
+                </tr>
+                <tr>
+                    <td>NEDBANK</td>
+                    <td>Ekurhuleni Skills Development (PTY)</td>
+                    <td>1303151464</td>
+					<td>198765</td>
+					<td>ID/PASSPORT NUMBER</td>
+                </tr>
+            </table>
+			<br>
+			<h2>About Payment Process</h2>
+                <p>Payments can be made through: Direct deposit at the bank, EFT (Electronic Fund Transfer) And Cash payment at
+				campus finance offices. For any queries regarding fees, please contact Mr Nkosi: 076-783-7612</p>
+        </div>
+    </div>
+	
+<!----- About Us Section -----> 
+<div id="services">
+    <div class="container">
+	 <h1 class="heading">About US</h1>
+	 <br>
+	<span style="color:black;"><p>ESD was established in 2016 in East Rand. In Villa Lisa Boksburg to primarily focusing on training IT short 
+        courses and providing learnership and internships for our community not mainly Villa Lisa but the whole of Ekurhuleni. We also looking
+        in training the government employees End user computing and Administrator work.
+        <br><br>		
+	    Establishing a long-term with our students, Sponsors and partners making sure that ESD Collage education is always affordable and
+	   quality education. And students benefit from our well -priced courses.
+	   <br><br>
+	   We offer several courses in IT Short courses like End User Computing, Technopreneur, Web Developer and C++ programmer. To give youth
+	   empowerment skills to start to start to start working for themselves through using skills they learned.</p></span>
+      <div class="services-list">
+        <div>
+		🚀
+          <h2>Our Vision</h2>
+          <p>Our vision is to provide quality and affordable education in South Africa.<br><br> Our vision is to establish long term 
+		  business relationship with our clients.<br><br> Trigger the brand to grow by providing professional services to our customers
+		 </p>
+        </div>
+        <div>
+        🎯
+          <h2>Our Mission</h2>
+          <p>To provide excellent service to our students, by giving them their best and affordable education in the college.
+           <br><br>Use quality studying material to our students and value their money  they pay in the college</p>
+        </div>
+        <div>
+        🎓 
+          <h2>Our Value</h2>
+          <p>We believe there is no time than now and whatever chance you get grab it and all in it maybe the chance to make
+		    change.
+		     <br><br>Life is what one makesof it when chooses to live on strives to live. </p> <br><br>
+			
+        </div>
+      </div>
+
+    </div>
+</div>
+
+    <!-- Contact Section -->
+    <div id="contact-us">
+        <div class="container">
+            <h1 class="heading">Get In Touch<span class="here">We're Here To Help</span></h1>
+            <p>Have a question or want to connect? We’re here to help! Reach out to us using
+			the form below, and we'll get back to you as soon as possible.
+                <span style="color:chocolate;"><b>Reach out to us today, and let's build your
+				future together.<br></b></span></p>
+            <div class="box-container">
+                <div class="contact-left">
+				<br>
+                    <p><i class="bx bxs-phone"></i> Call Us: +2776 783 7612</p>
+					<p><i class='bx bxl-whatsapp'></i> WhatsApp: +2779 777 0542</p>
+                    <p><i class="bx bx-envelope"></i> Email: esd@gmail.com</p>
+                    <p><i class="bx bx-map"></i> Address: 41 Elephant Street<br>Villa Liza EXT 1 Boksburg 1459</p>
+                    <div class="social-icon">
+					<h2>Follow US</h2>
+                        <a href="#" class="facebook"><i class="bx bxl-facebook"></i></a>
+                        <a href="#" class="twitter"><i class="bx bxl-twitter"></i></a>
+                        <a href="#" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+						<a href="#" class="tiktok"><i class='bx bxl-tiktok'></i></a>
+						<a href="#" class="youtube"><i class='bx bxl-youtube'></i></a>
+                    </div>
+                </div>
+                <div class="contact-right">
+                    <form action="">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn btn2 btn3">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<footer>
+    <div class="footer-container">
+        <div class="footer">
+            <div class="footer-logo">
+                <img src="WhatsApp Image 2025-03-31 at 09.49.38.jpeg" alt="Ekurhuleni Skills Development Logo">
+            </div>
+            <div class="footer-heading footer-1">
+                <a href="file://143.160.81.140/CTX_Redirected_Data$/30989825/Documents/esd/esd.html">Home</a>
+                <a href="#introduction">Our School</a>
+				<a href="file://143.160.81.140/CTX_Redirected_Data$/30989825/Documents/esd/latest%20news.html">Latest News</a>
+                <a href="file://143.160.81.140/CTX_Redirected_Data$/30989825/Documents/esd/esd.html#services">About</a>
+                <a href="file://143.160.81.140/CTX_Redirected_Data$/30989825/Documents/esd/esd.html#contact-us">Contact</a>
+            </div>
+            <div class="footer-heading footer-2">
+                <p><i class='bx bx-envelope'></i> esd@gmail.com</p><br>
+				<p><i class="bx bx-map"></i> Villa Liza Ext 1</p><br>
+                <p><i class='bx bxs-contact'></i> +276-783-7612</p><br>
+                <p><i class='bx bxl-whatsapp'></i> +279-777-0542</p>
+            </div>
+            <div class="footer-heading footer-3">
+                <a href="#">Vacancies</a>
+                <a href="#">Calender</a>
+                <a href="https://manyamat.github.io/esd-enroll/">Apply Now</a>
+                <a href="#about">Donate</a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function () {
+            document.querySelector('.menu').classList.toggle('active');
+        });
+
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+
+        setInterval(function () {
+            plusSlides(1);
+        }, 9000); // 9 seconds
+    </script>
+</body>
+
+</html>
